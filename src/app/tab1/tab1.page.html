@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      TODOS
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,32 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">TODOS</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card *ngFor="let item of cards">
+    <ion-card-header>
+      <ion-card-title>
+        {{item.taskHeading}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{item.taskDesc}}
+    </ion-card-content>
+    <ion-button (click)="moveCard()" class="doneButton">
+      <ion-icon name="checkmark"></ion-icon>
+    </ion-button>
+    <ion-button (click)="dlteCard()" class="closeButton">
+      <ion-icon name="close-circle"></ion-icon>
+    </ion-button>
+  </ion-card>
+
+  <!-- fab placed to the bottom end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addCard()">
+      <ion-icon name="add-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>
