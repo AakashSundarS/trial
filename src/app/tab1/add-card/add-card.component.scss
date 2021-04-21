@@ -1,3 +1,9 @@
+div{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 ion-card{
     padding: 8px;
 }

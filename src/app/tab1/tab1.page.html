@@ -22,10 +22,10 @@
     <ion-card-content>
       {{item.taskDesc}}
     </ion-card-content>
-    <ion-button (click)="moveCard()" class="doneButton">
+    <ion-button (click)="moveCard(item)" class="doneButton">
       <ion-icon name="checkmark"></ion-icon>
     </ion-button>
-    <ion-button (click)="dlteCard()" class="closeButton">
+    <ion-button (click)="dlteCard(item)" class="closeButton">
       <ion-icon name="close-circle"></ion-icon>
     </ion-button>
   </ion-card>

@@ -13,5 +13,15 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-card *ngFor="let item of cards">
+    <ion-card-header>
+      <ion-card-title>
+        {{item.taskHeading}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{item.taskDesc}}
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

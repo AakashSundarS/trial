@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { DataServiceService } from "../../services/data-service.service";
+
 @Component({
   selector: 'app-add-card',
   templateUrl: './add-card.component.html',
@@ -11,6 +13,7 @@ export class AddCardComponent implements OnInit {
   taskDescription: string;
 
   constructor(
+    public modalController: ModalController,
     public dataService: DataServiceService
   ) { }
 
@@ -31,6 +34,13 @@ export class AddCardComponent implements OnInit {
       default:
         break;
     }
+  }
+
+  closeModal(){
+    this.dataService.pushToDoCards();
+    this.modalController.dismiss({
+      'dismissed': true
+    });
   }
 
 }
